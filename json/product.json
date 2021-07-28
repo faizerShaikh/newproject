@@ -14,7 +14,7 @@
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 100,
         "catogory": "Furniture",
         "isInCart": false
     },
@@ -33,7 +33,7 @@
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Fashion",
         "isInCart": false
     },
@@ -52,7 +52,7 @@
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 110,
         "catogory": "Grocery",
         "isInCart": false
     },
@@ -71,7 +71,7 @@
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
             "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Electronics",
         "isInCart": false
     },
@@ -90,7 +90,7 @@
                 "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                 "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                 "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 125,
         "catogory": "Beauty",
         "isInCart": false
     },
@@ -109,7 +109,7 @@
                 "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                 "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                 "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "170",
+        "price": 170,
         "catogory": "Beauty",
         "isInCart": false
     },
@@ -128,7 +128,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "100",
+        "price": 100,
         "catogory": "Beauty",
         "isInCart": false
     },
@@ -147,7 +147,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "100",
+        "price": 100,
         "catogory": "Furniture",
         "isInCart": false
     },
@@ -166,7 +166,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Furniture",
         "isInCart": false
     },
@@ -185,7 +185,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Fashion",
         "isInCart": false
     },
@@ -204,7 +204,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Fashion",
         "isInCart": false
     },
@@ -223,7 +223,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "190",
+        "price": 190,
         "catogory": "Grocery",
         "isInCart": false
     },
@@ -242,7 +242,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Grocery",
         "isInCart": false
     },
@@ -261,7 +261,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "100",
+        "price": 100,
         "catogory": "Electronics",
         "isInCart": false
     },
@@ -280,7 +280,7 @@
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis",
                     "fames oporteat nullam dictumst usu facilisi unum tritani iuvaret felis"],
-        "price": "120",
+        "price": 120,
         "catogory": "Electronics",
         "isInCart": false
     }
