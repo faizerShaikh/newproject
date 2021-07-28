@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+:root {
+  --prim-clr: #005bff;
+  --sec-clr: #f5f5f5;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--sec-clr);
+  margin: 0;
+}
+li {
+  list-style: none;
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* ############# utility classes ####################### */
+.container {
+  max-width: 1200px;
+  width: 80%;
+  margin: auto;
+}
+.bg-clr-blue {
+  background: var(--prim-clr);
+}
+.clr-dark {
+  color: #000;
+}
+.clr-light {
+  color: #fff;
+}
+.btn {
+  background: #fff;
+  border-radius: 10em;
+  border: 2px solid #fff;
+  padding: 2.5em;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 5px 5px 10px #000;
+  border-color: #000;
+  font-weight: 500;
+}
+.btn-sec {
+  background: #0342b8;
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 2em;
+  border-radius: 10em;
+  z-index: o;
+  font-size: 1.3rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.btn-sec::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 115px;
+  height: 40px;
+  border-radius: 10em;
+  border: 2px solid #0342b8;
+ 
+}
+.btn-dtl {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  margin: 20px 20px auto auto;
+  background: #0342b8;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+.btn-dtl:hover {
+  transform: scale(0.95);
+}
+.btn-sec:hover::before {
+  display: none;
+}
+.btn-sec:hover {
+  transform: scale(0.95);
+  background: none;
+  font-weight: 600;
+  box-shadow: 2px 2px 5px #000;
+}
+
+.plc-btn{
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: 700;
+  background: var(--prim-clr);
+  display: block;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  margin: 1em auto;
+  transition: all 0.2s ease-in;
+}
+.plc-btn:hover{
+  transform: scale(1.1);
+  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.425);
+}
+/* ###########navbar###### */
+.fix {
+  height: 100px;
+}
+.navbar {
+  background-color: var(--prim-clr);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 2em;
+  margin: auto;
+}
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 5px 5px 10px #000;
+}
+.menu-items {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.menu-item {
+  padding: 0 1.5em;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in;
+}
+.menu-item:hover {
+  font-weight: 600;
+  transform: scale(0.98);
+}
+
+.menu-item:last-child {
+  padding: 5px 1.5em;
+}
+.logo {
+  font-size: 2.5rem;
+}
+
+/* ################## body styling ######################### */
+
+.showcase {
+  display: flex;
+  flex-direction: row;
+}
+.left {
+  background: #f1f1f1;
+  width: 20%;
+  height: 100%;
+  z-index: 99;
+  top: 78px;
+  position: fixed;
+  border-right: 1px solid #000;
+}
+.right {
+  background: var(--sec-clr);
+  width: 80%;
+  height: auto;
+  padding: 5em;
+  margin-left: 20%;
+}
+.cat-body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: none;
+}
+.cat-heading {
+  background: rgba(80, 80, 80, 0.4);
+  text-align: center;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 0;
+}
+.cat-items {
+  padding: 0;
+  width: 90%;
+}
+.cat-item {
+  padding: 5px 5px 5px 15px;
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid rgb(185, 185, 185);
+  cursor: pointer;
+}
+
+/* ######################## card styling ########################### */
+
+.img img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: 20px 10px;
+  object-fit: cover;
+  object-position: center;
+}
+.img {
+  width: 39%;
+}
+.content {
+  background: var(--prim-clr);
+  border-top-left-radius: 6em;
+  padding: 10px;
+  width: 59%;
+  height: 100%;
+}
+.product-heading {
+  font-size: 2rem;
+  margin: 15px 20px auto 20px;
+}
+.price-tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin: 20px;
+  margin-top: 3.1em;
+  padding: 0 10px;
+}
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+.dtl {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* ################################### details stylin ####################################### */
+
+.card-dtl{
+  width: 100%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  height: auto;
+  margin-bottom: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.product-discript-dtl {
+  font-size: 1.5rem;
+  margin: -3px 20px auto 20px;
+}
+
+.dtl-list{
+    background: var(--prim-clr);
+    margin: 0 0 10px 10px ;
+    width: 100%;
+}
+.product-dtl{
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: #0342b8;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.314);
+}
+.open{
+    display: none;
+}
+
+.dtl-list-item{
+    font-size: 1.3rem;
+    padding: 6px;
+    font-weight: 500;
+}
+.dtl-list-item:nth-child(odd){
+    background: #0342b8;
+}
+.abt-product{
+    margin:30px 20px;
+}
+.abt-pnt{
+    padding-top: 3px;
+    margin: 0 20px;
+    list-style-type: disc;
+    font-size: 1.3rem;
+}
+.abt-head{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+/* ##################### Basket Page Styling ################### */
+
+.basket-wrapper{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    
+}
+
+/* ######### Bas-Left Styling ####### */
+.bas-left{
+    width: 30%;
+    z-index: 99;
+    top: 78px;
+    position: fixed;
+    border-right: 2px solid rgba(80, 80, 80, 0.4);
+    height: 100%;
+}
+
+.invoice-heading{
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 2rem;
+    background: rgba(80, 80, 80, 0.4);
+
+}
+.wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 2em;
+  align-content: center;
+  font-size: 1.5rem;
+}
+.invoie-total{
+  font-weight: 600;
+  border-top: 2px solid rgba(80, 80, 80, 0.4);
+  border-bottom: 2px solid rgba(80, 80, 80, 0.4);
+}
+/* ########## .bas-right styling ######## */
+.bas-right{
+    width: 70%;
+    margin-left: 30%;
+    padding: 5em;
+}
+.input{
+  display: block;
+  width: 25%;
+  padding: 5px 1em;
+  font-size: 1.2rem;
+  background: #0342b8;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.input:focus{
+  border: 2px solid #fff;
+  outline: none;
+}
+::placeholder{
+  color: #fff;
+  opacity: 1;
+  font-weight: 500;
+}
+.input-wrapper{
+  display: flex;
+  flex-direction: row-reverse;
+}
