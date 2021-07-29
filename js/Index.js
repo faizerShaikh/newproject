@@ -1,28 +1,31 @@
 var products = [];
-var basket = [];
+const search = document.querySelector("#input");
+const right = document.querySelector(".right");
 
 // fetching data from  json file
 
 fetch("./json/product.json")
-    .then(res => res.json())
-    .then(data => {
-        products = data;
-        // console.log(products);
-        data.forEach(product => displayProducts(product))
-    })
+  .then((res) => res.json())
+  .then((data) => {
+    products = data;
+    // console.log(products);
+    let output = "";
+    data.forEach((product) => {
+      output = displayProducts(product, output);
+    });
+    right.innerHTML = output;
+  });
 
 // function to display fetched data in html
 
-function displayProducts(product) {
-    const card = document.createElement("div");
-    card.classList.add("card-dtl");
-
-    card.innerHTML = `
+function displayProducts(product, output) {
+  output += `
+    <div class="card-dtl">
         <div class="img">
-		    <img src="${product.src}" alt="product image">
+            <img src="${product.src}" alt="product image">
             <div class="dtl-list open">
-               	<ul>
- 		          	<li class="product-dtl clr-light">Product Details</li>
+                <ul>
+                    <li class="product-dtl clr-light">Product Details</li>
                     <li class="dtl-list-item clr-light">Model : ${product.modelNo}</li>
                     <li class="dtl-list-item clr-light">Brand : ${product.brand}</li>
                     <li class="dtl-list-item clr-light">Color : ${product.color}</li>
@@ -48,63 +51,96 @@ function displayProducts(product) {
                 <a href="./basket.html" class="btn-sec clr-light" id="${product.productID}">Buy Now</a>
                 <i class="fas fa-shopping-cart icon clr-light" id="${product.productID}"></i>
             </div>
-        </div>`;
-    const right = document.querySelector(".right");
-    right.appendChild(card);
+        </div>
+    </div>`;
+  return output;
 }
 
 // to see details
 
-document.querySelector(".right").addEventListener('click', (e) => {
-    if (e.target.classList.contains('btn-dtl')) {
-        e.target.parentElement.nextElementSibling.classList.toggle('open');
-        e.target.parentElement.parentElement.previousElementSibling.lastElementChild.classList.toggle('open');
-    }
-})
+right.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-dtl")) {
+    e.target.parentElement.nextElementSibling.classList.toggle("open");
+    e.target.parentElement.parentElement.previousElementSibling.lastElementChild.classList.toggle(
+      "open"
+    );
+  }
+});
 
-// to see by catogory 
+// to see by catogory
 
-const catItems = document.querySelectorAll('.cat-item');
+const catItems = document.querySelectorAll(".cat-item");
 
 catItems.forEach((catItem) => {
-    catItem.addEventListener('click', (e) => {
-        let key = e.target.innerText;
-        const right = document.querySelector('.right').innerHTML = '';
-        products.forEach((product) => {
-            if (product.catogory === key) {
-                displayProducts(product);
-            }
-        })
-    })
-})
-
+  catItem.addEventListener("click", (e) => {
+    let key = e.target.innerText;
+    right.innerHTML = "";
+    products.forEach((product) => {
+      if (product.catogory === key) {
+        displayProducts(product);
+      }
+    });
+  });
+});
 
 // add to cart on event
 
-document.querySelector(".right").addEventListener('click', (e) => {
-    if (e.target.classList.contains('icon') || e.target.classList.contains('btn-sec')) {
-        const key = e.target.id;
-        products.forEach((product) => {
-            if (product.productID == key) {
-                let cart = getCart();
-                cart.push(product)
-                localStorage.setItem("cart", JSON.stringify(cart))
-               // console.log('added to local');
-            }
-        })
-        let data = getCart();
-       // console.log(data);
-    }
+right.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("icon") ||
+    e.target.classList.contains("btn-sec")
+  ) {
+    const key = e.target.id;
+    products.forEach((product) => {
+      if (product.productID == key) {
+        let cart = getCart();
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // console.log('added to local');
+      }
+    });
+    let data = getCart();
+    // console.log(data);
+  }
 });
 
+// search event
+const searchProduct = async (searchContent) => {
+  const res = await fetch("../json/product.json");
+  const products = await res.json();
+  let matchProducts = products.filter((product) => {
+    const regex = new RegExp(`^${searchContent}`, "gi");
+    return product.name.match(regex) || product.catogory.match(regex);
+  });
+  if (searchContent === "") {
+    // right.innerHTML = '';
+    let output = "";
+    products.forEach((product) => {
+      output = displayProducts(product, output);
+    });
+    right.innerHTML = output;
+  } else if (matchProducts.length === 0) {
+    console.log("len is 0");
+    console.log(right);
+    right.innerHTML = ` <h2 class="default-msg">Sorry There Is No Such Product Or Catagory For You...</h2>`;
+  } else {
+    let output = "";
+    matchProducts.forEach((product) => {
+      output = displayProducts(product, output);
+    });
+    right.innerHTML = output;
+  }
+};
+
+search.addEventListener("input", () => searchProduct(search.value));
 
 function getCart() {
-    let cart;
-    if (localStorage.getItem('cart') === null) {
-        cart = [];
-    } else {
-        cart = JSON.parse(localStorage.getItem('cart'));
-    }
+  let cart;
+  if (localStorage.getItem("cart") === null) {
+    cart = [];
+  } else {
+    cart = JSON.parse(localStorage.getItem("cart"));
+  }
 
-    return cart;
+  return cart;
 }

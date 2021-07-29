@@ -77,7 +77,6 @@ a {
   height: 40px;
   border-radius: 10em;
   border: 2px solid #0342b8;
- 
 }
 .btn-dtl {
   font-size: 1.2rem;
@@ -102,7 +101,7 @@ a {
   box-shadow: 2px 2px 5px #000;
 }
 
-.plc-btn{
+.plc-btn {
   font-size: 2rem;
   text-decoration: none;
   font-weight: 700;
@@ -114,7 +113,7 @@ a {
   margin: 1em auto;
   transition: all 0.2s ease-in;
 }
-.plc-btn:hover{
+.plc-btn:hover {
   transform: scale(1.1);
   box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.425);
 }
@@ -158,6 +157,25 @@ nav {
 .logo {
   font-size: 2.5rem;
 }
+.ip-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* padding: 0 2em; */
+}
+.input-prime {
+  display: block;
+  border-radius: 10em;
+  width: 100%;
+  outline: none;
+  margin: 0 2em;
+  background: #0342b8;
+  border: 2px solid #fff;
+  padding: 8px 10px;
+  color: #fff;
+}
 
 /* ################## body styling ######################### */
 
@@ -180,6 +198,12 @@ nav {
   height: auto;
   padding: 5em;
   margin-left: 20%;
+}
+.default-msg {
+  font-size: 2rem;
+  width: 100%;
+  margin: auto;
+  font-weight: 300;
 }
 .cat-body {
   display: flex;
@@ -255,7 +279,7 @@ nav {
 
 /* ################################### details stylin ####################################### */
 
-.card-dtl{
+.card-dtl {
   width: 100%;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   height: auto;
@@ -272,93 +296,91 @@ nav {
   margin: -3px 20px auto 20px;
 }
 
-.dtl-list{
-    background: var(--prim-clr);
-    margin: 0 0 10px 10px ;
-    width: 100%;
+.dtl-list {
+  background: var(--prim-clr);
+  margin: 0 0 10px 10px;
+  width: 100%;
 }
-.product-dtl{
-    padding: 10px;
-    font-size: 1.5rem;
-    font-weight: 500;
-    background: #0342b8;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.314);
+.product-dtl {
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background: #0342b8;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.314);
 }
-.open{
-    display: none;
+.open {
+  display: none;
 }
 
-.dtl-list-item{
-    font-size: 1.3rem;
-    padding: 6px;
-    font-weight: 500;
+.dtl-list-item {
+  font-size: 1.3rem;
+  padding: 6px;
+  font-weight: 500;
 }
-.dtl-list-item:nth-child(odd){
-    background: #0342b8;
+.dtl-list-item:nth-child(odd) {
+  background: #0342b8;
 }
-.abt-product{
-    margin:30px 20px;
+.abt-product {
+  margin: 30px 20px;
 }
-.abt-pnt{
-    padding-top: 3px;
-    margin: 0 20px;
-    list-style-type: disc;
-    font-size: 1.3rem;
+.abt-pnt {
+  padding-top: 3px;
+  margin: 0 20px;
+  list-style-type: disc;
+  font-size: 1.3rem;
 }
-.abt-head{
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 10px 0px;
+.abt-head {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px 0px;
 }
 
 /* ##################### Basket Page Styling ################### */
 
-.basket-wrapper{
-    width: 100%;
-    height: 95vh;
-    display: flex;
-    
+.basket-wrapper {
+  width: 100%;
+  height: 95vh;
+  display: flex;
 }
 
 /* ######### Bas-Left Styling ####### */
-.bas-left{
-    width: 35%;
-    z-index: 99;
-    top: 78px;
-    position: fixed;
-    border-right: 2px solid rgba(80, 80, 80, 0.4);
-    height: 100%;
+.bas-left {
+  width: 35%;
+  height: 100%;
+  z-index: 99;
+  top: 78px;
+  position: fixed;
+  border-right: 1px solid #000;
 }
 
-.invoice-heading{
-    text-align: center;
-    padding: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 2rem;
-    background: rgba(80, 80, 80, 0.4);
-
+.invoice-heading {
+  text-align: center;
+  padding: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 2rem;
+  background: rgba(80, 80, 80, 0.4);
 }
-.wrap{
+.wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:10px 2em;
+  padding: 10px 2em;
   align-content: center;
   font-size: 1.5rem;
 }
-.invoie-total{
+.invoie-total {
   font-weight: 600;
   border-top: 2px solid rgba(80, 80, 80, 0.4);
   border-bottom: 2px solid rgba(80, 80, 80, 0.4);
 }
 /* ########## .bas-right styling ######## */
-.bas-right{
-    width: 65%;
-    margin-left: 35%;
-    padding: 5em;
+.bas-right {
+  width: 65%;
+  margin-left: 35%;
+  padding: 5em;
 }
-.input{
+.input {
   display: block;
   width: 25%;
   padding: 5px 1em;
@@ -369,16 +391,16 @@ nav {
   border-radius: 10px;
   margin-right: 20px;
 }
-.input:focus{
+.input:focus {
   border: 2px solid #fff;
   outline: none;
 }
-::placeholder{
+::placeholder {
   color: #fff;
   opacity: 1;
   font-weight: 500;
 }
-.input-wrapper{
+.input-wrapper {
   display: flex;
   flex-direction: row-reverse;
 }
