@@ -75,11 +75,13 @@ catItems.forEach((catItem) => {
   catItem.addEventListener("click", (e) => {
     let key = e.target.innerText;
     right.innerHTML = "";
+    let output = "";
     products.forEach((product) => {
       if (product.catogory === key) {
-        displayProducts(product);
+        output = displayProducts(product, output);
       }
     });
+    right.innerHTML = output;
   });
 });
 
