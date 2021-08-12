@@ -145,8 +145,7 @@ basketRight.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-rm")) {
     e.target.parentElement.parentElement.parentElement.remove();
     removeProduct(parseInt(e.target.id));
-    invoiceCalculator(invoice);
-    displayInvoice(invoice);
+    invoiceCalculator(invoice);   displayInvoice(invoice);
   }
 });
 
