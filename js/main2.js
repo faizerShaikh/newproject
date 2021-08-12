@@ -12,9 +12,9 @@ var lastTotal = 1;
 
 let invoice = [];
 class invoiceInfo {
-  constructor(ID, quanity, price, total) {
+  constructor(ID, quantity, price, total) {
     this.ID = ID;
-    this.quantity = quanity;
+    this.quantity = quantity;
     this.price = price;
     this.total = total;
   }
@@ -22,7 +22,7 @@ class invoiceInfo {
 
 // add in invoice obj
 cart.forEach((product) => {
-  let prod = new invoiceInfo(product.productID, 1, product.price, 0);
+  let prod = new invoiceInfo(product.productID,product.quantity, product.price, 0);
   invoice.push(prod);
   invoiceCalculator(invoice);
   let invoiceInLocal = getInvoice();
@@ -69,7 +69,7 @@ function addToCart(product, output) {
             <div class="content">
                 <h2 class="product-heading clr-light">${product.name}</h2>
                 <p class="product-discript-dtl clr-light" >${product.discrip}</p>
-                <div class="input-wrapper"><input type="number" class="input clr-light" value="1" min="1" max="50" placeholder="Quantity" id="quantity"></div>
+                <div class="input-wrapper"><input type="number" class="input clr-light" value="${product.quantity}" min="1" max="50" placeholder="Quantity" id="quantity"></div>
                 <div class="price-tag">
                     <h2 class="price clr-light">&euro;<span id="cardPrice">${product.price}</span></h2>
                     <a class="btn-rm btn-sec" id="${product.productID}">&nbsp;Remove</a>
@@ -89,8 +89,12 @@ function displayInvoice(invoice) {
     total = invo.total + total;
   });
   output += `
-    <li class="invoice-itm wrap">total price is <span id="price">&euro;${total}</span></li>
-    <li class="invoie-total wrap">Total Amount <span id="total">&euro;${total}</span></li>`;
+    <li class="invoice-itm wrap"><span> 
+      Price Of <span id="noOfProd">(${cart.length})</span> 
+      products</span> <span id="price">&euro; ${total}</span>
+    </li>
+    <li class="invoie-itm wrap">Delivery Charges <span class="sec-clr">FREE</span></li>
+    <li class="invoice-total wrap">Total Ammount <span>&euro; ${total}</span></li>`;
   list.innerHTML = output;
 }
 
@@ -98,16 +102,20 @@ function displayInvoice(invoice) {
 
 function updateOnQuantity(ele, id, invoice) {
   let quantity = parseInt(ele);
+  let cart = getCart();
   let invoiceInLocal = getInvoice();
   invoice.forEach((invo) => {
-    invoiceInLocal.forEach((invoLocal) => {
-      if (invo.ID === id && invoLocal.ID === id) {
-        invo.quantity = quantity;
-        invoLocal.quantity = quantity;
-        console.log(invoiceInLocal);
-      }
-    });
-  });
+    cart.forEach((cart) => {
+      invoiceInLocal.forEach((invoLocal) => {
+        if (invo.ID === id && invoLocal.ID === id && cart.productID == id) {
+          invo.quantity = quantity;
+          invoLocal.quantity = quantity;
+          cart.quantity = quantity
+        }
+      });
+    })
+  })
+  localStorage.setItem("cart", JSON.stringify(cart));
   localStorage.setItem("invoiceInLocal", JSON.stringify(invoiceInLocal));
   invoiceCalculator(invoice);
   displayInvoice(invoice);
@@ -137,8 +145,8 @@ basketRight.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-rm")) {
     e.target.parentElement.parentElement.parentElement.remove();
     removeProduct(parseInt(e.target.id));
-    updateInvoice(e.target.previousElementSibling.lastElementChild.textContent);
-    console.log(total);
+    invoiceCalculator(invoice);
+    displayInvoice(invoice);
   }
 });
 

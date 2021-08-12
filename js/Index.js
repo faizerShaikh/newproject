@@ -39,11 +39,12 @@ function displayProducts(product, output) {
             <div class="dtl"><a class="btn-dtl clr-light">view details</a></div>
             <div class="abt-product open">
                 <ul>
-                    <li class="abt-head clr-light">About This Product</li>
-                    <li class="abt-pnt clr-light">${product.dtl[1]}</li>
-                    <li class="abt-pnt clr-light">${product.dtl[2]}</li>
-                    <li class="abt-pnt clr-light">${product.dtl[3]}</li>
-                    <li class="abt-pnt clr-light">${product.dtl[4]}</li>
+                  <li class="abt-head clr-light">About This Product</li>
+                  <li class="abt-pnt clr-light">${product.dtl[0]}</li>
+                  <li class="abt-pnt clr-light">${product.dtl[1]}</li>
+                  <li class="abt-pnt clr-light">${product.dtl[2]}</li>
+                  <li class="abt-pnt clr-light">${product.dtl[3]}</li>
+                  <li class="abt-pnt clr-light">${product.dtl[4]}</li>
                 </ul>
             </div>
             <div class="price-tag">
@@ -56,6 +57,8 @@ function displayProducts(product, output) {
   return output;
 }
 
+
+
 // to see details
 
 right.addEventListener("click", (e) => {
@@ -64,6 +67,15 @@ right.addEventListener("click", (e) => {
     e.target.parentElement.parentElement.previousElementSibling.lastElementChild.classList.toggle(
       "open"
     );
+    let img = document.querySelector(".img");
+    img.style.margin ="auto";
+    img.style.borderRadius = "0";
+    document.querySelector(".img img").style.borderRadius = "0";
+    if(e.target.parentElement.nextElementSibling.classList.contains("open")){
+      document.querySelector(".btn-dtl").innerHTML = "View Details";
+    }else {
+      document.querySelector(".btn-dtl").innerHTML = "Close Details";
+    }
   }
 });
 
